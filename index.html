@@ -13,38 +13,11 @@
   background: #ccc  !important;
   display:block !important ;
   z-index: 9999 !important;
+  position:absolute;  
+  bottom:0px;
 }
 
 </style>
-  <style>
-  .skip {
-            font-family: sans-serif  !important;
-            font-size: 25px  !important;
-            background: rgba(255,0, 0, 0.9)  !important;
-            border: 1px solid #fff  !important;
-            position: absolute  !important; 
-            bottom:45px  !important;
-            padding: 5px 20px  !important;
-            color: #fff  !important;
-            font-weight: 700  !important;
-            z-index: 9999 !important;
-            text-decoration: none  !important;
-			text-align:center  !important;
-			display:block !important ;
-			margin:0 auto  !important;
-        }
-		video {
-            object-fit: fill;
-        }
-
-        body {
-            margin: 0px !important;
-        }
-		div {
-			display: block;
-		}
-  
-  </style>
 
 </head>
 
@@ -68,7 +41,6 @@
         },
         render: function() {
           this.$el.html('<div class="clpr-emre marquee">EMRE KARATAŞOĞLU ID NUMBER</div>');
-          
           this.container.$el.append(this.$el);
           this.show();
           return this;
