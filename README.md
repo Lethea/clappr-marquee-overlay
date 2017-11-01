@@ -1,5 +1,5 @@
 ## EXAMPLE
-<img src="https://github.com/Lethea/clappr-dynamic-text-overlay/blob/master/clapr.png?raw=true">
+<img src="https://github.com/Lethea/clappr-marquee-overlay/blob/master/marqueeOverlay.png?raw=true">
 ```html
  $(document).ready(function() {
 
