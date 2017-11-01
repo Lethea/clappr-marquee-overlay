@@ -1,45 +1,45 @@
- var randomArea=function(changeDuration){
-	 var heightOfVideo =$("video").height();;
-	var widthOfVideo = $("video").width();;
-	var number = Math.floor(Math.random() * widthOfVideo);
-	if(number>200){
-		number = number-200;
-	}
-	$(".clpr-emre").css("left",number+"px");
-	var number2 = Math.floor(Math.random() * heightOfVideo);
-	if(number2>60){
-		number2=number2-60;
-	}
-	$(".clpr-emre").css("top",number2+"px");
-	setTimeout(function(){randomArea(changeDuration)},changeDuration);  
-  }
-  var defaultOption = {
-     textContent:"Sample Content"
-  };
+var defaults={
+    duration:15000,
+    direction:'left',
+    textContent:'Lorem Ipsum Dolar Sit Amet. Lorem Ipsum Dolar Sit Amet. Lorem Ipsum Dolar Sit Amet.'
+}
 
+var MarqueeOverlay = Clappr.UIContainerPlugin.extend({
+    name: 'marquee_overlay',
+    initialize: function() {
+        this.render();
+    },
+    bindEvents: function() {
+        this.listenTo(this.container, Clappr.Events.CONTAINER_FULLSCREEN, this.show);
+    },
+    hide: function() {
+        this.$el.hide();
+    },
+    show: function() {
+        this.$el.show();
+    },
+    render: function() {
+        defaults.textContent= this.options.marqueePluginConfig.textContent!=null ? this.options.marqueePluginConfig.textContent:"Lorem Ipsum Dolar Sit Amet. Lorem Ipsum Dolar Sit Amet. Lorem Ipsum Dolar Sit Amet.";
+        defaults.direction= this.options.marqueePluginConfig.direction!=null ? this.options.marqueePluginConfig.direction:"left";
+        defaults.duration= this.options.marqueePluginConfig.duration!=null ? this.options.marqueePluginConfig.duration:15000;
+        setTimeout(function(){
+            $('.marquee').marquee({
+                //speed in milliseconds of the marquee
+                duration: defaults.duration,
+                //gap in pixels between the tickers
+                gap: 50,
+                //time in milliseconds before the marquee will start animating
+                delayBeforeStart: 0,
+                //'left' or 'right'
+                direction:defaults.direction,
+                //true or false - should the marquee be duplicated to show an effect of continues flow
+                duplicated: true
+            });
+        },1000)
+        this.$el.html('<div class="clpr-emre marquee">'+defaults.textContent+'</div>');
+        this.container.$el.append(this.$el);
+        this.show();
+        return this;
+    }
+});
 
-  var HelloWorld = Clappr.UIContainerPlugin.extend({
-        name: 'hello_world',
-        initialize: function() {
-          this.render();
-        },
-        bindEvents: function() {
-          this.listenTo(this.container, Clappr.Events.CONTAINER_FULLSCREEN, this.show);
-        },
-        hide: function() {
-          this.$el.hide();
-        },
-        show: function() {
-          this.$el.show();
-        },
-        render: function() {
-            defaultOption.textContent= this.options.emrePluginConfig.textContent!=null ? this.options.emrePluginConfig.textContent:"";
-          this.$el.html('<div class="clpr-emre">'+defaultOption.textContent+'</div>');
-          
-          this.container.$el.append(this.$el);
-          this.show();
-          return this;
-        }
-      });
-	  
-	  randomArea(2000);
