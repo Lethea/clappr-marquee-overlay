@@ -35,7 +35,7 @@ var MarqueeOverlay = Clappr.UIContainerPlugin.extend({
                 //true or false - should the marquee be duplicated to show an effect of continues flow
                 duplicated: true
             });
-        },1000)
+        },100)
         this.$el.html('<div class="clpr-emre marquee">'+defaults.textContent+'</div>');
         this.container.$el.append(this.$el);
         this.show();
