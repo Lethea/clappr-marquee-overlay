@@ -1,12 +1,12 @@
-.clpr-emre{
-    z-index:9999;
-    color:rgba(0,0,0,0.3);
-    background-color: rgba(205, 211, 220,0.5);
-    font-size:20px;
-    position:absolute;
-    width: 165px; word-break: break-all; word-wrap: break-word;
-	right:20px;
-  }
+.marquee {
+      width: 100%  !important ;
+      overflow: hidden  !important;
+      background: #ccc  !important;
+      display:block !important ;
+      z-index: 9999 !important;
+      position:absolute;
+      bottom:0px;
+    }
   video {
             object-fit: fill;
         }
