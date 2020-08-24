@@ -1,15 +1,16 @@
 ## EXAMPLE
 <img src="https://github.com/Lethea/clappr-marquee-overlay/blob/master/marqueeOverlay.png?raw=true">
-```html
- $(document).ready(function() {
 
+
+```js
+$(document).ready(function() {
          var source = 'http://sample.vodobox.net/skate_phantom_flex_4k/skate_phantom_flex_4k.m3u8';
          var player = new Clappr.Player({
              source:source,
              parentId: "#player-wrapper",
              autoPlay: true,
              marqueePluginConfig:{
-                 textContent:""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+                 textContent:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
                  duration:15000,
                  direction:'left'
              },
@@ -35,22 +36,15 @@
              height: '100%',
              events: {
                  onPlay: function() {
-
                  },
                  onPause:function(){
-
                      $(".play-wrapper").show().css("display","block !important");
-
                  },
                  onEnded: function() {
-
                  }
              }
          });
      });
-
-
-
 ```
 
 ## SCRIPTS & PLUGIN
